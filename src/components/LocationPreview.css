@@ -1,0 +1,29 @@
+a.location-prev{
+
+    display: flex;
+    position: relative;
+    text-decoration: none;
+    min-height: 6rem;
+    max-width: 30rem;
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(rgba(18, 18, 18, 0), rgba(18, 18, 18, 0), rgba(18, 18, 18, 0.8)), url("../assets/location-preview2.jpg");
+    margin: 0 auto;
+    
+}
+
+.location-prev h2{
+    position: absolute;
+    color: white;
+    left: 0%;
+    top:70%;
+    font-family: wubba;
+    color: greenyellow;
+    font-size: 1.8rem;
+}
+
+@font-face {
+    font-family: wubba ;
+    src: url("../assets/fonts/WubbaLubbaDubDub.ttf");
+}
+

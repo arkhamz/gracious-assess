@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import axios from "axios";
-import Location from "./Location";
-import useGetLocation from "./hooks/useGetLocation";
-import useGetByDimension from "./hooks/useGetByDimension";
+import Location from "../components/Location";
+import useGetLocation from "../hooks/useGetLocation";
+import useGetByDimension from "../hooks/useGetByDimension";
+import LocationPreview from "../components/LocationPreview";
 
 
 export default function Home(){
@@ -38,7 +39,7 @@ export default function Home(){
             </form>
 
             {location && location.map(function(l){
-                return <Location location={l} key={l.id} />
+                return <LocationPreview key={l.id} location={l} />
             })}
         
             {error && <p>{error}</p>}
@@ -53,7 +54,7 @@ export default function Home(){
             </form>
 
             {dimension && dimension.map(function(l){
-                return <Location location={l} key={l.id} />
+                return <LocationPreview key={l.id} location={l} />
             })}
            
 

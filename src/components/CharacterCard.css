@@ -1,0 +1,36 @@
+.char-container{
+    max-height: 30rem;
+    max-width: 15rem;
+    border-radius: 4%;
+    display:flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 4px silver;
+    
+}
+
+.char-container .top{
+    height: 80%;
+    width: 100%;
+}
+
+.char-name{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.char-container .top img{
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 4% 4% 0% 0%;
+}
+
+.char-container .bottom{
+    padding: 0.4rem;
+    height: 20%;
+    width: 100%;
+    color: white;
+    background-color: yellowgreen;
+    border-radius: 0% 0% 4% 4%;
+
+}

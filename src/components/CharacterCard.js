@@ -1,13 +1,20 @@
 import { useState } from "react";
+import "./CharacterCard.css"
 
-function CharacterCard({char}){
+export default function CharacterCard({char}){
 
     return (
-        <article className="char-container">
+        <>
+        {char && (
+            <article className="char-container">
             <div className="top">
-                <img src="" alt="" />
-                
+                <img src={char.image} alt="character card"/>
+            </div>
+            <div className="bottom">
+                <h4 className="char-name"> {char.name}</h4>
+                <p>Status: {char.status}</p>
             </div>
         </article>
+        )}</>
     )
 }
