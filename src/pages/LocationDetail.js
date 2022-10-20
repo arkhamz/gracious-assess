@@ -11,6 +11,9 @@ export default function LocationDetail(){
     const {id} = useParams();
     const [residents,setResidents] = useState(null);
     const [location,setLocation] = useState(null);
+    const [currentPage,setCurrentPage] = useState(1);
+    const [postsPerPage, setPostsPerPage] = useState(10)
+
 
     useEffect(function(){
 
@@ -47,6 +50,32 @@ export default function LocationDetail(){
     console.log(location);
     console.log(residents);
 
+    // pagination e.g. page 1 with 10 things
+
+    const indexOfLastPost =  currentPage * postsPerPage; 
+    // e.g. 1 * 10 = 10 - 10 (will always be 1 more than actual, due to n-1 of slice)
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    // e.g. 10 - 10 = 0
+    const currentPosts = residents && residents.slice(indexOfFirstPost, indexOfLastPost);
+
+    function handleClick(direction){
+
+        if(direction === "next"){
+            setCurrentPage(p => p + 1);
+        } else if (direction === "previous"){
+            setCurrentPage(p => p - 1);
+        }
+
+    }
+
+    const canGoNext = currentPage >= 1 && currentPosts.length >= postsPerPage;
+    console.log(currentPosts.length);
+    console.log(postsPerPage);
+
+    const canGoBack = currentPage >= 2;
+
+
+
 
     return (
         <>
@@ -54,9 +83,14 @@ export default function LocationDetail(){
             <section className="residents">
                 <h1>{location.name}</h1>
                 <div className="resident-list">
-                {residents.length > 0 && residents.map(function(r){
+                {currentPosts.length > 0 && currentPosts.map(function(r){
                     return <CharacterCard key={r.id} char={r}/>
                 })}
+                </div>
+                <div className="pagination-buttons">
+                {canGoBack && <button onClick={e => handleClick("previous") }>Previous</button>}
+                    {canGoNext && <button onClick={e => handleClick("next") }>Next</button>}
+                    
                 </div>
                 {residents.length < 1 && (
                     <div className="empty">

@@ -1,5 +1,5 @@
 .char-container{
-    max-height: 30rem;
+    min-height: 5rem;
     max-width: 15rem;
     border-radius: 4%;
     display:flex;
@@ -27,7 +27,7 @@
 
 .char-container .bottom{
     padding: 0.4rem;
-    height: 20%;
+    height: auto;
     width: 100%;
     color: white;
     background-color: yellowgreen;
