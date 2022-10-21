@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import useGetEpisodes from "../hooks/useGetEpisodes";
 import "./Episodes.css"
 
@@ -28,10 +29,12 @@ export default function Episodes(){
         <section className="episodes">
             <ul className="episode-list">
                 {episodes && episodes.map(function(episode){
-                    return <article key={episode.id} className="episode-prev">
+                    return <Link to={`/episodes/${episode.id}`} style={{textDecoration:"none", color: "inherit"}} key={episode.id}>
+                    <article className="episode-prev">
                         <h4>{episode.name}</h4>
                         <p>{episode.episode}</p>
                     </article>
+                    </Link>
                 })}
             </ul>
             <div className="pagination-buttons">
