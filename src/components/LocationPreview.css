@@ -8,7 +8,7 @@ a.location-prev{
     background-position: center;
     background-size: cover;
     background-image: linear-gradient(rgba(18, 18, 18, 0), rgba(18, 18, 18, 0), rgba(18, 18, 18, 0.8)), url("../assets/location-preview2.jpg");
-    margin: 0 auto;
+    /* margin: 0 auto; */
     
 }
 
