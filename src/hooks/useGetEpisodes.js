@@ -16,7 +16,7 @@ export default function useGetEpisodes(){
             const pages = response.data.info.pages
 
             if(!fetchedEpisodes){
-                throw new Error("No locations exist");
+                throw new Error("No episodes found");
             } else{
                 setEpisodes(fetchedEpisodes);
                 setMaxPages(pages);

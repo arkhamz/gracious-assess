@@ -23,6 +23,7 @@ section.episodes{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align:center;
     padding: 0.5rem;
     min-height: 8rem;  
 
