@@ -1,2 +1,4 @@
-# Getting Started with Create React App
+# Rick & Morty - Gracious Test Case
 [Demo](https://shile-grac-case.netlify.app/)
+
+
