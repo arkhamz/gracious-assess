@@ -5,18 +5,21 @@ export default function useGetEpisodes(){
 
     const [episodes, setEpisodes] = useState(null);
     const [error, setError] = useState(null);
+    const [maxPages,setMaxPages] = useState(null);
 
-    async function getEpisodes(){
+    async function getEpisodes(page){
 
         setError(null);
         try {
-            const response = await axios.get(`https://rickandmortyapi.com/api/episode`);
+            const response = await axios.get(`https://rickandmortyapi.com/api/episode?page=${page}`);
             const fetchedEpisodes = response.data.results;
+            const pages = response.data.info.pages
 
             if(!fetchedEpisodes){
                 throw new Error("No locations exist");
             } else{
                 setEpisodes(fetchedEpisodes);
+                setMaxPages(pages);
                 setError(null);
             }
             
@@ -27,7 +30,7 @@ export default function useGetEpisodes(){
         }
     }
 
-    return {episodes,error,getEpisodes}
+    return {episodes,error,getEpisodes, maxPages}
 
 
 }
