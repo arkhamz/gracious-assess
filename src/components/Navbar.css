@@ -1,0 +1,33 @@
+nav {
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+    height: 100px;
+    background-color: #2b2a2a;
+    box-shadow: 0 3px 5px 6px rgb(0 0 0 / 50%);
+  }
+
+.links{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    list-style-type: none;
+    padding-right: 5px;
+    background-color: inherit;
+
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    font-size: calc(1rem + 1vw);
+}
+
+.links a:first-of-type{
+    margin-right: auto;
+    margin-left: 10px;
+}

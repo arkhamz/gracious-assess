@@ -17,6 +17,7 @@ export default function useGetLocation(){
                 throw new Error("No locations exist");
             } else{
                 setLocation(fetchedLocations);
+                setError(null);
             }
             
         } catch (e) {
