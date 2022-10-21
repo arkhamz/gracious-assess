@@ -41,8 +41,8 @@ export default function LocationDetail(){
         getLocationWithResidents(); 
     },[]);
 
-    console.log(location);
-    console.log(residents);
+    // console.log(location);
+    // console.log(residents);
 
     // pagination e.g. page 1 with 10 things
 

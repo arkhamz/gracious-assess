@@ -31,7 +31,7 @@ export default function Location({location}){
         }
     },[]);
 
-    console.log(location);
+    // console.log(location);
 
     return <div>
         <h2>{location && location.name}</h2>

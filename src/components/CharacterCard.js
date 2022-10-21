@@ -7,7 +7,6 @@ export default function CharacterCard({char}){
     return (
         <>
         {char && (
-            <Link style={{textDecoration: "none"}} to={`/characters/${char.id}`}>
                 <article className="char-container">
                     <div className="top">
                         <img src={char.image} alt="character card"/>
@@ -17,7 +16,7 @@ export default function CharacterCard({char}){
                         <p>{char.status}</p>
                     </div>
                 </article>
-            </Link>
+            
         )}</>
     )
 }

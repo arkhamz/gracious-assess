@@ -14,10 +14,12 @@
   height:100%;
 }
 
-
-
-
 p, span {
   font-size:calc(1rem + 1vw);
   letter-spacing: 1.7px;
+}
+
+/* NavLInk active style */
+.active{
+  border-bottom: 2px solid white;
 }

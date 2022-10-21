@@ -1,6 +1,10 @@
 .home-container{
     width: 100%;
-    min-height: 100%;
+   height: calc(100vh - 100px);
+    background-image: url("../assets/bg1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .home-filters{
@@ -9,3 +13,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+
+@media screen and (max-width: 615px){
+
+    .home-filters{
+        grid-template-columns: 1fr
+    }
+}
+

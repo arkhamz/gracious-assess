@@ -7,8 +7,9 @@ a.location-prev{
     max-width: 30rem;
     background-position: center;
     background-size: cover;
-    background-image: linear-gradient(rgba(18, 18, 18, 0), rgba(18, 18, 18, 0), rgba(18, 18, 18, 0.8)), url("../assets/location-preview2.jpg");
-    /* margin: 0 auto; */
+    background-image: linear-gradient(rgba(18, 18, 18, 1), rgba(18, 18, 18, 0.4), rgba(18, 18, 18, 0.8)), url("../assets/location-preview2.jpg");
+    border-radius: 3px;
+    margin-top: 10px;
     
 }
 
@@ -16,10 +17,11 @@ a.location-prev{
     position: absolute;
     color: white;
     left: 0%;
-    top:70%;
+    /* top:70%; */
     font-family: wubba;
     color: greenyellow;
     font-size: 1.8rem;
+    text-align:start;
 }
 
 @font-face {

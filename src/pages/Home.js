@@ -6,7 +6,7 @@ export default function Home(){
 
    return (
     <section className="home-container">
-        <h2>Home</h2>
+        {/* <h2>Home</h2> */}
         <div className="home-filters">
             <LocationSearch/>
             <DimensionSearch />

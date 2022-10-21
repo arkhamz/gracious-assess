@@ -3,7 +3,6 @@ import useGetByDimension from "../hooks/useGetByDimension";
 import LocationPreview from "./LocationPreview";
 import "./DimensionSearch.css"
 
-
 export default function DimensionSearch(){
 
     const [dimensionTerm,setDimensionTerm] = useState("");
@@ -15,15 +14,17 @@ export default function DimensionSearch(){
     }
 
    return (
-    <section className="dimension-container">
-        <h2>Search Dimensions</h2>
+    <section className="dimensions-container">
+        <h2 style={{color: "white"}}>Search by Dimensions</h2>
         <div className="dimensions">
             <form onSubmit={e => {
                 e.preventDefault();
                 handleSubmitDimension(dimensionTerm);
             }}>
-                <input value={dimensionTerm} onChange={e => setDimensionTerm(e.target.value)} placeholder="E.g. replaced dimension" type="text" />
+               <div className="dimensions-input">
+               <input value={dimensionTerm} onChange={e => setDimensionTerm(e.target.value)} placeholder="E.g. replaced dimension" type="text" />
                 <button>Search</button>
+               </div>
             </form>
 
             {dimension && dimension.map(function(l){

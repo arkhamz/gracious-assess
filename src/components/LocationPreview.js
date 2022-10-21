@@ -5,7 +5,7 @@ import "./LocationPreview.css"
 
 export default function LocationPreview({location}){
 
-    console.log(location);
+    // console.log(location);
 
 
 

@@ -16,14 +16,16 @@ export default function LocationSearch(){
 
    return (
     <section className="locations-container">
-        <h2>Search Locations</h2>
+        <h2 style={{color: "white"}}>Search Locations</h2>
         <div className="locations">
             <form onSubmit={e => {
                 e.preventDefault();
                 handleSubmitLocation(locationTerm);
             }}>
-                <input value={locationTerm} onChange={e => setLocationTerm(e.target.value)} placeholder="A location e.g. Testicle monster location" type="text" />
+               <div className="locations-input">
+                <input value={locationTerm} onChange={e => setLocationTerm(e.target.value)} placeholder="E.g. Gear World" type="text" />
                 <button>Search</button>
+               </div>
             </form>
 
             {location && location.map(function(l){

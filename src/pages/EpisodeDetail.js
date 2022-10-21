@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
 import useGetEpisodeCharacters from "../hooks/useGetEpisodeCharacters";
 import CharacterCard from "../components/CharacterCard";
 import "./EpisodeDetail.css";
@@ -17,7 +17,7 @@ export default function EpisodeDetail(){
         
     },[]);
 
-    console.log(episode);
+    // console.log(episode);
 
     return (
         <>
@@ -30,11 +30,10 @@ export default function EpisodeDetail(){
         
                 <ul className="episode-characters">
                     {episode.characters && episode.characters.map(function(char){
-                        return <CharacterCard char={char} key={char.id} />
+                        return <Link key={char.id} to={`/characters/${char.id}`} style={{textDecoration:"none"}}>
+                            <CharacterCard char={char} />
+                        </Link>
                     })}
-
-
-        
                 </ul>
             </section>
             )}

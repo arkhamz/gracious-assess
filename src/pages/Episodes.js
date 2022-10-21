@@ -22,7 +22,7 @@ export default function Episodes(){
         }
     }
 
-    console.log(maxPages)
+    // console.log(maxPages)
 
 
     return (
