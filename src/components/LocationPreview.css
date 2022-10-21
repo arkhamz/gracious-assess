@@ -1,5 +1,4 @@
 a.location-prev{
-
     display: flex;
     position: relative;
     text-decoration: none;
@@ -10,7 +9,6 @@ a.location-prev{
     background-image: linear-gradient(rgba(18, 18, 18, 1), rgba(18, 18, 18, 0.4), rgba(18, 18, 18, 0.8)), url("../assets/location-preview2.jpg");
     border-radius: 3px;
     margin-top: 10px;
-    
 }
 
 .location-prev h2{

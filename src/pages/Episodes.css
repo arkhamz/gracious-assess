@@ -29,8 +29,6 @@ section.episodes{
 
 }
 
-
-
 section.episodes button{
     border:none;
     width: 10rem;
@@ -41,5 +39,4 @@ section.episodes button{
     background-color: yellowgreen;
     font-size: calc(1rem + 1vw);
     /* font-weight: bold; */
-
 }

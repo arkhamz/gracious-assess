@@ -13,7 +13,6 @@
     font-family: wubba;
     font-size: 3rem;
     color:yellowgreen;
-
 }
 
 .resident-list{
@@ -23,19 +22,16 @@
     grid-template-columns: repeat(3, minmax(0px, 1fr));
     gap: 10px;
     justify-items:center;
-
 }
 
 .empty{
     min-height: 10rem;
     width:10rem;
-   
 }
 
 .poopy{
     max-width: 100%;
-    object-fit: cover;
-    
+    object-fit: cover;   
 } 
 
 .residents a {

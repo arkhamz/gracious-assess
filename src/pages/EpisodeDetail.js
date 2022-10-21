@@ -4,7 +4,6 @@ import useGetEpisodeCharacters from "../hooks/useGetEpisodeCharacters";
 import CharacterCard from "../components/CharacterCard";
 import "./EpisodeDetail.css";
 
-
 // fetches episode along with characters
 export default function EpisodeDetail(){
 

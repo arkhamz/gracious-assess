@@ -16,8 +16,6 @@ export default function Navbar(){
         setOpen(false);
     }
     
-    
-
 
     return (
         <nav>

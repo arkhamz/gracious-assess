@@ -1,5 +1,3 @@
-
-
 .dimensions-container{
     width: 100%;
     height: 100%;
@@ -16,12 +14,9 @@
     padding: 0.4rem;
 }
 
-
 .dimensions-container .dimensions a {
     margin: 2rem auto !important;
 }
-
-
 
 .dimensions-container input {
     padding: 0.6rem;

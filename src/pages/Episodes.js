@@ -24,7 +24,6 @@ export default function Episodes(){
 
     // console.log(maxPages)
 
-
     return (
         <section className="episodes">
             <ul className="episode-list">
