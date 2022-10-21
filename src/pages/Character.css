@@ -1,0 +1,42 @@
+.character-container{
+    display:flex;
+    width: 80%;
+    margin: 0 auto;
+    min-height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.character-profile{
+    min-width: 50%;
+}
+
+.character-profile img {
+    max-width: 100%;
+    object-fit: cover;
+    box-shadow: 2px 2px 4px silver;  
+    border-radius: 5px;
+}
+
+.character-content{
+    display:flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 50%;
+}
+
+.character-content h2{
+    font-family: wubba;
+    font-size: 3rem;
+    color: yellowgreen
+}
+
+.character-content p {
+    font-weight: bold;
+}
+
+.character-content p span{
+    font-weight:normal;
+}

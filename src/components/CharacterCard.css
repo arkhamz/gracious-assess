@@ -4,12 +4,12 @@
     border-radius: 4%;
     display:flex;
     flex-direction: column;
-    box-shadow: 2px 2px 4px silver;
-    
+    box-shadow: 2px 2px 4px silver;  
 }
 
 .char-container .top{
-    height: 80%;
+    /* height: 80%; 
+    Removing fixed height of img container fixed whitespace issue*/
     width: 100%;
 }
 
@@ -20,17 +20,16 @@
 
 .char-container .top img{
     max-width: 100%;
-    height: 100%;
-    object-fit: contain;
+    height: 100%; /*takes up entire height of top div*/
+    object-fit: cover;
     border-radius: 4% 4% 0% 0%;
 }
 
 .char-container .bottom{
     padding: 0.4rem;
-    height: auto;
+    height: 100%;
     width: 100%;
     color: white;
     background-color: yellowgreen;
     border-radius: 0% 0% 4% 4%;
-
 }

@@ -12,6 +12,7 @@ export default function useGetByDimension(){
         try {
             const response = await axios.get(`https://rickandmortyapi.com/api/location/?dimension=${term}`);
             const fetchedLocations = response.data.results;
+            console.log("fetched dimensions", fetchedLocations)
 
             if(!fetchedLocations){
                 throw new Error("No locations exist");

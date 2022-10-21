@@ -11,8 +11,8 @@ export default function CharacterCard({char}){
                 <img src={char.image} alt="character card"/>
             </div>
             <div className="bottom">
-                <h4 className="char-name"> {char.name}</h4>
-                <p>Status: {char.status}</p>
+                <p style={{color: "black", fontFamily:"wubba"}} className="char-name"> {char.name}</p>
+                <p>{char.status}</p>
             </div>
         </article>
         )}</>
