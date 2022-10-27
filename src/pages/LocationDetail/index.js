@@ -12,7 +12,6 @@ export default function LocationDetail() {
   const [{ currentPage }, dispatch] = usePageReducer();
   const postsPerPage = 10;
 
-  console.log();
   // pagination e.g. page 1 with 10 things
 
   const indexOfLastPost = currentPage * postsPerPage;
@@ -24,8 +23,8 @@ export default function LocationDetail() {
 
   const canGoNext =
     currentPage >= 1 && currentPosts && currentPosts.length >= postsPerPage;
-  // console.log(currentPosts.length);
-  // console.log(postsPerPage);
+  // ;
+  // ;
 
   const canGoBack = currentPage >= 2;
 

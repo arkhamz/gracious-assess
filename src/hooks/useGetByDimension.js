@@ -19,8 +19,8 @@ export default function useGetByDimension(currentQuery) {
       } else {
         setDimension(fetchedLocations);
       }
-    } catch (e) {
-      setError(e.message);
+    } catch (error) {
+      setError(error.message);
     }
   }, [query]);
 
