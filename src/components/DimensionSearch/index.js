@@ -5,8 +5,7 @@ import "./DimensionSearch.css";
 
 export default function DimensionSearch() {
   const [dimensionTerm, setDimensionTerm] = useState("");
-  const { location: dimension, error: dimensionError } =
-    useGetByDimension(dimensionTerm);
+  const { dimension } = useGetByDimension(dimensionTerm);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,8 +33,6 @@ export default function DimensionSearch() {
             // the component is a <Link> to the location detail page with that id
             return <LocationPreview key={l.id} location={l} />;
           })}
-
-        {dimensionError && <p>{dimensionError}</p>}
       </div>
     </section>
   );
