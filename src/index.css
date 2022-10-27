@@ -5,21 +5,25 @@
   font-family: MaisonNeueMedium, Arial, sans-serif;
 }
 
-:root{
-  --main-font: MaisonNeueMedium;
+:root {
+  --main-font: maisonneuemedium;
 }
 
-.App,html,body,#root{
+.app,
+html,
+body,
+#root {
   width: 100%;
-  height:100%;
+  height: 100%;
 }
 
-p, span {
-  font-size:calc(1rem + 1vw);
+p,
+span {
+  font-size: calc(1rem + 1vw);
   letter-spacing: 1.7px;
 }
 
 /* NavLInk active style */
-.active{
+.active {
   border-bottom: 2px solid white;
 }

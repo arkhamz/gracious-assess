@@ -1,0 +1,34 @@
+a.location-prev {
+  display: flex;
+  position: relative;
+  text-decoration: none;
+  min-height: 6rem;
+  max-width: 30rem;
+  background-position: center;
+  background-size: cover;
+  background-image:
+    linear-gradient(
+      rgb(18 18 18 / 100%),
+      rgb(18 18 18 / 40%),
+      rgb(18 18 18 / 80%)
+    ),
+    url("../../assets/location-preview2.jpg");
+  border-radius: 3px;
+  margin-top: 10px;
+}
+
+.location-prev h2 {
+  position: absolute;
+  left: 0%;
+
+  /* top:70%; */
+  font-family: wubba, Arial, Helvetica, sans-serif;
+  color: greenyellow;
+  font-size: 1.8rem;
+  text-align: start;
+}
+
+@font-face {
+  font-family: wubba;
+  src: url("../../assets/fonts/WubbaLubbaDubDub.ttf");
+}

@@ -1,34 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
+import { useCallback } from "react";
 
-export default function useGetCharacter(){
+export default function useGetCharacter(id) {
+  const [character, setCharacter] = useState(null);
+  const [error, setError] = useState(null);
 
-    const [character, setCharacter] = useState(null);
-    const [error, setError] = useState(null);
+  const getCharacter = useCallback(async (id) => {
+    setError(null);
 
-    async function getCharacter(id){
+    try {
+      const response = await axios.get(
+        `https://rickandmortyapi.com/api/character/${id}`
+      );
+      const fetchedCharacter = response?.data;
 
-        setError(null);
-        try {
-            const response = await axios.get(`https://rickandmortyapi.com/api/character/${id}`);
-            const fetchedCharacter = response.data;
-
-            if(!fetchedCharacter){
-                throw new Error("No such character exists");
-            } else{
-                setCharacter(fetchedCharacter);
-            }
-            
-        } catch (e) {
-            console.log(e);
-            console.log(e.message);
-            setError(e.message);
-        }
+      if (!fetchedCharacter) {
+        throw new Error("No such character exists");
+      } else {
+        setCharacter(fetchedCharacter);
+      }
+    } catch (error) {
+      if (error?.message) {
+        setError(error.message);
+      }
     }
+  }, []);
 
-    return {character,error,getCharacter}
+  useEffect(() => {
+    if (!character && !!id) {
+      getCharacter(id);
+    }
+  }, [character, id, getCharacter]);
 
-
+  return { character, error, loading: !character && !error };
 }
-
-
