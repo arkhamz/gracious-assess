@@ -1,0 +1,18 @@
+.episode-detail {
+  width: 100%;
+  min-height: 100%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.episode-characters {
+  width: 100%;
+  height: 100%;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  justify-content: center;
+}

@@ -1,33 +1,42 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 
-export default function useGetByDimension(){
+export default function useGetByDimension(currentQuery) {
+  const [query, setQuery] = useState(currentQuery);
+  const [dimension, setDimension] = useState(null);
+  const [error, setError] = useState(null);
 
-    const [location, setLocation] = useState(null);
-    const [error, setError] = useState(null);
+  const getByDimension = useCallback(async () => {
+    setError(null);
+    try {
+      const response = await axios.get(
+        `https://rickandmortyapi.com/api/location/?dimension=${query}`
+      );
+      const fetchedLocations = response?.data?.results;
 
-    async function getByDimension(term){
-
-        setError(null);
-        try {
-            const response = await axios.get(`https://rickandmortyapi.com/api/location/?dimension=${term}`);
-            const fetchedLocations = response.data.results;
-            console.log("fetched dimensions", fetchedLocations)
-
-            if(!fetchedLocations){
-                throw new Error("No locations exist");
-            } else{
-                setLocation(fetchedLocations);
-            }
-            
-        } catch (e) {
-            console.log(e);
-            console.log(e.message);
-            setError(null);
-        }
+      if (!fetchedLocations) {
+        throw new Error("No locations exist");
+      } else {
+        setDimension(fetchedLocations);
+      }
+    } catch (e) {
+      setError(e.message);
     }
+  }, [query]);
 
-    return {location,error,getByDimension}
+  useEffect(() => {
+    if (currentQuery !== query) {
+      setDimension(null);
+      setQuery(currentQuery);
+      getByDimension();
+    }
+  }, [currentQuery, query, getByDimension]);
 
+  useEffect(() => {
+    if (!dimension && !!currentQuery) {
+      getByDimension();
+    }
+  }, [currentQuery, dimension, getByDimension, query]);
 
+  return { dimension, error, getByDimension, loading: !dimension && !error };
 }
