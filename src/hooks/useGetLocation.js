@@ -12,7 +12,7 @@ export default function useGetLocation(currentQuery) {
       const response = await axios.get(
         `https://rickandmortyapi.com/api/location/?name=${query}`
       );
-      const fetchedLocations = response.data.results;
+      const fetchedLocations = response?.data?.results;
 
       if (!fetchedLocations) {
         throw new Error("No locations exist");
@@ -21,7 +21,9 @@ export default function useGetLocation(currentQuery) {
         setError(null);
       }
     } catch (error) {
-      setError(error.message);
+      if (error?.message) {
+        setError(error.message);
+      }
     }
   }, [query]);
 

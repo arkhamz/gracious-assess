@@ -27,12 +27,15 @@ export default function DimensionSearch() {
             <button>Search</button>
           </div>
         </form>
-
-        {dimension &&
-          dimension.map(function (l) {
-            // the component is a <Link> to the location detail page with that id
-            return <LocationPreview key={l.id} location={l} />;
-          })}
+        {dimension?.map((dimension) => {
+          // the component is a <Link> to the location detail page with that id
+          return (
+            <LocationPreview
+              key={JSON.stringify(dimension)}
+              location={dimension}
+            />
+          );
+        })}
       </div>
     </section>
   );

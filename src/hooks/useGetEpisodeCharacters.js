@@ -30,7 +30,9 @@ export default function useGetEpisodeCharacters(id) {
       if (!characterResponse) {
         throw new Error("Characters could not be fetched");
       }
-      const characters = characterResponse?.map((character) => character.data);
+      const characters = characterResponse
+        ?.filter((character) => !!character?.data)
+        ?.map((character) => character.data);
 
       setEpisode({ ...fetchedEpisode, characters: characters });
     } catch (error) {

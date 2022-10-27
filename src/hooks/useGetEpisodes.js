@@ -13,18 +13,21 @@ export default function useGetEpisodes(currentPage) {
       const response = await axios.get(
         `https://rickandmortyapi.com/api/episode?page=${page}`
       );
-      const fetchedEpisodes = response.data.results;
-      const pages = response.data.info.pages;
+      const fetchedEpisodes = response?.data?.results;
+      const pages = response?.data?.info?.pages;
 
       if (!fetchedEpisodes) {
         throw new Error("No episodes found");
       } else {
         setEpisodes(fetchedEpisodes);
-        setMaxPages(pages);
-        setError(null);
+        if (pages) {
+          setMaxPages(pages);
+        }
       }
     } catch (error) {
-      setError(error.message);
+      if (error?.message) {
+        setError(error.message);
+      }
     }
   }, [page]);
 

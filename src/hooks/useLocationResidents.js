@@ -12,19 +12,24 @@ export default function useLocationResidents(id) {
       const locationResponse = await axios.get(
         `https://rickandmortyapi.com/api/location/${id}`
       );
-      setLocation(locationResponse.data);
-      // get residents
-      const locationResidents = locationResponse.data.residents;
-      // get residents all at once
-      const promiseArray = locationResidents.map(function (i) {
-        return axios.get(`${i}/?status=alive`);
-      });
-      const residentResponse = await Promise.all(promiseArray);
-      const modified = residentResponse.map((character) => character.data);
-      const alive = modified.filter(
-        (char) => "alive" === char.status.toLowerCase()
-      );
-      setLocationResidents(alive);
+
+      const location = locationResponse?.data;
+
+      if (location) {
+        setLocation(locationResponse?.data);
+        // get residents
+        const locationResidents = locationResponse?.data?.residents;
+        // get residents all at once
+        const promiseArray = locationResidents?.map(function (i) {
+          return axios.get(`${i}/?status=alive`);
+        });
+        const residentResponse = await Promise.all(promiseArray);
+        const modified = residentResponse.map((character) => character.data);
+        const alive = modified.filter(
+          (char) => "alive" === char.status.toLowerCase()
+        );
+        setLocationResidents(alive);
+      }
     } catch (error) {
       setError(error.message);
     }

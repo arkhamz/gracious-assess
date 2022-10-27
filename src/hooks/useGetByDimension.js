@@ -20,7 +20,9 @@ export default function useGetByDimension(currentQuery) {
         setDimension(fetchedLocations);
       }
     } catch (error) {
-      setError(error.message);
+      if (error?.message) {
+        setError(error.message);
+      }
     }
   }, [query]);
 

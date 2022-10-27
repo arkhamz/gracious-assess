@@ -13,7 +13,7 @@ export default function useGetCharacter(id) {
       const response = await axios.get(
         `https://rickandmortyapi.com/api/character/${id}`
       );
-      const fetchedCharacter = response.data;
+      const fetchedCharacter = response?.data;
 
       if (!fetchedCharacter) {
         throw new Error("No such character exists");
